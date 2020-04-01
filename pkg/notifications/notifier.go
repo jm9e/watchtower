@@ -1,7 +1,7 @@
 package notifications
 
 import (
-	ty "github.com/containrrr/watchtower/pkg/types"
+	ty "github.com/jm9e/watchtower/pkg/types"
 	"github.com/johntdyer/slackrus"
 	log "github.com/sirupsen/logrus"
 	"github.com/spf13/cobra"
@@ -29,7 +29,7 @@ func NewNotifier(c *cobra.Command) *Notifier {
 	// Parse types and create notifiers.
 	types, err := f.GetStringSlice("notifications")
 	if err != nil {
-		log.WithField("could not read notifications argument", log.Fields{ "Error": err }).Fatal()
+		log.WithField("could not read notifications argument", log.Fields{"Error": err}).Fatal()
 	}
 	for _, t := range types {
 		var tn ty.Notifier

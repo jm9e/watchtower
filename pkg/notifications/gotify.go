@@ -7,7 +7,7 @@ import (
 	"net/http"
 	"strings"
 
-	t "github.com/containrrr/watchtower/pkg/types"
+	t "github.com/jm9e/watchtower/pkg/types"
 	log "github.com/sirupsen/logrus"
 	"github.com/spf13/cobra"
 )

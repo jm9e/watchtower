@@ -1,11 +1,11 @@
 package actions
 
 import (
-	"github.com/containrrr/watchtower/internal/util"
-	"github.com/containrrr/watchtower/pkg/container"
-	"github.com/containrrr/watchtower/pkg/lifecycle"
-	"github.com/containrrr/watchtower/pkg/sorter"
-	"github.com/containrrr/watchtower/pkg/types"
+	"github.com/jm9e/watchtower/internal/util"
+	"github.com/jm9e/watchtower/pkg/container"
+	"github.com/jm9e/watchtower/pkg/lifecycle"
+	"github.com/jm9e/watchtower/pkg/sorter"
+	"github.com/jm9e/watchtower/pkg/types"
 	log "github.com/sirupsen/logrus"
 )
 
@@ -80,7 +80,7 @@ func stopStaleContainer(container container.Container, client container.Client, 
 			return
 		}
 	}
-	
+
 	if err := client.StopContainer(container, params.Timeout); err != nil {
 		log.Error(err)
 	}

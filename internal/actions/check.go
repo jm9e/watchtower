@@ -3,8 +3,8 @@ package actions
 import (
 	"errors"
 	"fmt"
-	"github.com/containrrr/watchtower/pkg/filters"
-	"github.com/containrrr/watchtower/pkg/sorter"
+	"github.com/jm9e/watchtower/pkg/filters"
+	"github.com/jm9e/watchtower/pkg/sorter"
 	"sort"
 	"strings"
 	"time"
@@ -13,7 +13,7 @@ import (
 
 	log "github.com/sirupsen/logrus"
 
-	"github.com/containrrr/watchtower/pkg/container"
+	"github.com/jm9e/watchtower/pkg/container"
 )
 
 // CheckForMultipleWatchtowerInstances will ensure that there are not multiple instances of the
@@ -31,7 +31,7 @@ func CheckForMultipleWatchtowerInstances(client container.Client, cleanup bool, 
 	sameScopeContainers := []container.Container{}
 	for _, c := range containers {
 		if c.GetScope() == scope {
-			log.Debug("Found watchtower on different scope: %s", scope)
+			log.Info("Found watchtower on different scope: %s", scope)
 			sameScopeContainers = append(sameScopeContainers, c)
 		}
 	}

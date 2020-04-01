@@ -1,8 +1,8 @@
 package lifecycle
 
 import (
-	"github.com/containrrr/watchtower/pkg/container"
-	"github.com/containrrr/watchtower/pkg/types"
+	"github.com/jm9e/watchtower/pkg/container"
+	"github.com/jm9e/watchtower/pkg/types"
 	log "github.com/sirupsen/logrus"
 )
 
@@ -88,4 +88,3 @@ func ExecutePostUpdateCommand(client container.Client, newContainerID string) {
 		log.Error(err)
 	}
 }
-

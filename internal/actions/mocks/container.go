@@ -1,9 +1,9 @@
 package mocks
 
 import (
-	"github.com/containrrr/watchtower/pkg/container"
 	"github.com/docker/docker/api/types"
 	container2 "github.com/docker/docker/api/types/container"
+	"github.com/jm9e/watchtower/pkg/container"
 	"time"
 )
 

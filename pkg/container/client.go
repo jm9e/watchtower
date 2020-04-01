@@ -3,17 +3,17 @@ package container
 import (
 	"bytes"
 	"fmt"
-	"github.com/containrrr/watchtower/pkg/registry"
+	"github.com/jm9e/watchtower/pkg/registry"
 	"io/ioutil"
 	"strings"
 	"time"
 
-	t "github.com/containrrr/watchtower/pkg/types"
 	"github.com/docker/docker/api/types"
 	"github.com/docker/docker/api/types/container"
 	"github.com/docker/docker/api/types/filters"
 	"github.com/docker/docker/api/types/network"
 	sdkClient "github.com/docker/docker/client"
+	t "github.com/jm9e/watchtower/pkg/types"
 	log "github.com/sirupsen/logrus"
 	"golang.org/x/net/context"
 )

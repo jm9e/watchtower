@@ -1,7 +1,7 @@
 package notifications
 
 import (
-	t "github.com/containrrr/watchtower/pkg/types"
+	t "github.com/jm9e/watchtower/pkg/types"
 	"github.com/johntdyer/slackrus"
 	log "github.com/sirupsen/logrus"
 	"github.com/spf13/cobra"

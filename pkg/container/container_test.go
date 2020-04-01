@@ -1,11 +1,11 @@
 package container
 
 import (
-	"github.com/containrrr/watchtower/pkg/container/mocks"
-	"github.com/containrrr/watchtower/pkg/filters"
 	"github.com/docker/docker/api/types"
 	"github.com/docker/docker/api/types/container"
 	cli "github.com/docker/docker/client"
+	"github.com/jm9e/watchtower/pkg/container/mocks"
+	"github.com/jm9e/watchtower/pkg/filters"
 	. "github.com/onsi/ginkgo"
 	. "github.com/onsi/gomega"
 	"testing"

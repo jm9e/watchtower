@@ -1,6 +1,6 @@
 package filters
 
-import t "github.com/containrrr/watchtower/pkg/types"
+import t "github.com/jm9e/watchtower/pkg/types"
 
 // WatchtowerContainersFilter filters only watchtower containers
 func WatchtowerContainersFilter(c t.FilterableContainer) bool { return c.IsWatchtower() }

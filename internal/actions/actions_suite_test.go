@@ -1,17 +1,17 @@
 package actions_test
 
 import (
-	"github.com/containrrr/watchtower/internal/actions"
+	"github.com/jm9e/watchtower/internal/actions"
 	"testing"
 	"time"
 
-	"github.com/containrrr/watchtower/pkg/container"
-	"github.com/containrrr/watchtower/pkg/container/mocks"
+	"github.com/jm9e/watchtower/pkg/container"
+	"github.com/jm9e/watchtower/pkg/container/mocks"
 
 	"github.com/docker/docker/api/types"
 	cli "github.com/docker/docker/client"
 
-	. "github.com/containrrr/watchtower/internal/actions/mocks"
+	. "github.com/jm9e/watchtower/internal/actions/mocks"
 	. "github.com/onsi/ginkgo"
 	. "github.com/onsi/gomega"
 )

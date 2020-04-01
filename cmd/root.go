@@ -7,12 +7,12 @@ import (
 	"syscall"
 	"time"
 
-	"github.com/containrrr/watchtower/internal/actions"
-	"github.com/containrrr/watchtower/internal/flags"
-	"github.com/containrrr/watchtower/pkg/container"
-	"github.com/containrrr/watchtower/pkg/filters"
-	"github.com/containrrr/watchtower/pkg/notifications"
-	t "github.com/containrrr/watchtower/pkg/types"
+	"github.com/jm9e/watchtower/internal/actions"
+	"github.com/jm9e/watchtower/internal/flags"
+	"github.com/jm9e/watchtower/pkg/container"
+	"github.com/jm9e/watchtower/pkg/filters"
+	"github.com/jm9e/watchtower/pkg/notifications"
+	t "github.com/jm9e/watchtower/pkg/types"
 	"github.com/robfig/cron"
 	log "github.com/sirupsen/logrus"
 
@@ -36,7 +36,7 @@ var rootCmd = &cobra.Command{
 	Short: "Automatically updates running Docker containers",
 	Long: `
 Watchtower automatically updates running Docker containers whenever a new image is released.
-More information available at https://github.com/containrrr/watchtower/.
+More information available at https://github.com/jm9e/watchtower/.
 `,
 	Run:    Run,
 	PreRun: PreRun,

@@ -1,4 +1,4 @@
-module github.com/containrrr/watchtower
+module github.com/jm9e/watchtower
 
 go 1.12
 

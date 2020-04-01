@@ -7,7 +7,7 @@ import (
 	"github.com/spf13/cobra"
 	"net/http"
 
-	t "github.com/containrrr/watchtower/pkg/types"
+	t "github.com/jm9e/watchtower/pkg/types"
 	log "github.com/sirupsen/logrus"
 	"io/ioutil"
 )

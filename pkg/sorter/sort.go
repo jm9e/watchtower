@@ -2,7 +2,7 @@ package sorter
 
 import (
 	"fmt"
-	"github.com/containrrr/watchtower/pkg/container"
+	"github.com/jm9e/watchtower/pkg/container"
 	"time"
 )
 

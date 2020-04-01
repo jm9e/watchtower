@@ -1,18 +1,17 @@
 package actions_test
 
 import (
-	"github.com/containrrr/watchtower/internal/actions"
-	"github.com/containrrr/watchtower/pkg/container"
-	"github.com/containrrr/watchtower/pkg/container/mocks"
-	"github.com/containrrr/watchtower/pkg/types"
 	cli "github.com/docker/docker/client"
+	"github.com/jm9e/watchtower/internal/actions"
+	"github.com/jm9e/watchtower/pkg/container"
+	"github.com/jm9e/watchtower/pkg/container/mocks"
+	"github.com/jm9e/watchtower/pkg/types"
 	"time"
 
-	. "github.com/containrrr/watchtower/internal/actions/mocks"
+	. "github.com/jm9e/watchtower/internal/actions/mocks"
 	. "github.com/onsi/ginkgo"
 	. "github.com/onsi/gomega"
 )
-
 
 var _ = Describe("the update action", func() {
 	var dockerClient cli.CommonAPIClient
@@ -24,7 +23,6 @@ var _ = Describe("the update action", func() {
 			cli.WithHost(server.URL),
 			cli.WithHTTPClient(server.Client()))
 	})
-
 
 	When("watchtower has been instructed to clean up", func() {
 		BeforeEach(func() {
@@ -60,7 +58,7 @@ var _ = Describe("the update action", func() {
 		When("there are multiple containers using the same image", func() {
 			It("should only try to remove the image once", func() {
 
-				err := actions.Update(client, types.UpdateParams{ Cleanup: true })
+				err := actions.Update(client, types.UpdateParams{Cleanup: true})
 				Expect(err).NotTo(HaveOccurred())
 				Expect(client.TestData.TriedToRemoveImageCount).To(Equal(1))
 			})
@@ -76,7 +74,7 @@ var _ = Describe("the update action", func() {
 						time.Now(),
 					),
 				)
-				err := actions.Update(client, types.UpdateParams{ Cleanup: true })
+				err := actions.Update(client, types.UpdateParams{Cleanup: true})
 				Expect(err).NotTo(HaveOccurred())
 				Expect(client.TestData.TriedToRemoveImageCount).To(Equal(2))
 			})
