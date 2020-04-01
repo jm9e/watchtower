@@ -214,3 +214,21 @@ func (c Container) hostConfig() *dockercontainer.HostConfig {
 
 	return hostConfig
 }
+
+// Enabled returns the value of the container enabled label and if the label
+// was set.
+func (c Container) GetScope() string {
+	info := c.ContainerInfo()
+	if info == nil {
+		return ""
+	}
+	if info.Config == nil {
+		return ""
+	}
+	for _, envVariable := range info.Config.Env {
+		if strings.HasPrefix(envVariable, "SCOPE=") {
+			return envVariable[6:]
+		}
+	}
+	return ""
+}

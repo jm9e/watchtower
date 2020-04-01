@@ -19,7 +19,7 @@ import (
 // CheckForMultipleWatchtowerInstances will ensure that there are not multiple instances of the
 // watchtower running simultaneously. If multiple watchtower containers are detected, this function
 // will stop and remove all but the most recently started container.
-func CheckForMultipleWatchtowerInstances(client container.Client, cleanup bool) error {
+func CheckForMultipleWatchtowerInstances(client container.Client, cleanup bool, scope string) error {
 	awaitDockerClient()
 	containers, err := client.ListContainers(filters.WatchtowerContainersFilter)
 
@@ -28,13 +28,20 @@ func CheckForMultipleWatchtowerInstances(client container.Client, cleanup bool) 
 		return err
 	}
 
-	if len(containers) <= 1 {
+	sameScopeContainers := []container.Container{}
+	for _, c := range containers {
+		if c.GetScope() == scope {
+			sameScopeContainers = append(sameScopeContainers, c)
+		}
+	}
+
+	if len(sameScopeContainers) <= 1 {
 		log.Debug("There are no additional watchtower containers")
 		return nil
 	}
 
 	log.Info("Found multiple running watchtower instances. Cleaning up.")
-	return cleanupExcessWatchtowers(containers, client, cleanup)
+	return cleanupExcessWatchtowers(sameScopeContainers, client, cleanup)
 }
 
 func cleanupExcessWatchtowers(containers []container.Container, client container.Client, cleanup bool) error {
