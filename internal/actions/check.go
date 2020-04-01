@@ -31,7 +31,7 @@ func CheckForMultipleWatchtowerInstances(client container.Client, cleanup bool, 
 	sameScopeContainers := []container.Container{}
 	for _, c := range containers {
 		if c.GetScope() == scope {
-			log.Info("Found watchtower on same scope " + scope)
+			log.Info("Found watchtower on same scope")
 			sameScopeContainers = append(sameScopeContainers, c)
 		} else {
 			log.Info("Ignore watchtower on different scope " + scope)
