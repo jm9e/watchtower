@@ -114,6 +114,8 @@ func Run(c *cobra.Command, names []string) {
 	filter := filters.BuildFilter(names, enableLabel)
 	runOnce, _ := c.PersistentFlags().GetBool("run-once")
 
+	log.Info("Running in scope %s", scope)
+
 	if runOnce {
 		if noStartupMessage, _ := c.PersistentFlags().GetBool("no-startup-message"); !noStartupMessage {
 			log.Info("Running a one time update.")
