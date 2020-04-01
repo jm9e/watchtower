@@ -13,7 +13,7 @@ RUN apk add --no-cache \
     git \
     tzdata
 
-RUN git clone --branch "${WATCHTOWER_VERSION}" https://github.com/containrrr/watchtower.git
+RUN git clone --branch "${WATCHTOWER_VERSION}" https://github.com/jm9e/watchtower.git
 
 RUN \
   cd watchtower && \
