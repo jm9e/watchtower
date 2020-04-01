@@ -26,7 +26,7 @@ func RegisterSystemFlags(rootCmd *cobra.Command) {
 	flags := rootCmd.PersistentFlags()
 	flags.StringP(
 		"scope",
-		"s",
+		"",
 		viper.GetString("SCOPE"),
 		"the scope of this watchtower")
 
