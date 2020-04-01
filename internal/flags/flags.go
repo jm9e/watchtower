@@ -24,6 +24,12 @@ func RegisterDockerFlags(rootCmd *cobra.Command) {
 // RegisterSystemFlags that are used by watchtower to modify the program flow
 func RegisterSystemFlags(rootCmd *cobra.Command) {
 	flags := rootCmd.PersistentFlags()
+	flags.StringP(
+		"scope",
+		"s",
+		viper.GetString("SCOPE"),
+		"the scope of this watchtower")
+
 	flags.IntP(
 		"interval",
 		"i",
@@ -245,6 +251,7 @@ Should only be used for testing.
 // SetDefaults provides default values for environment variables
 func SetDefaults() {
 	viper.AutomaticEnv()
+	viper.SetDefault("SCOPE", "")
 	viper.SetDefault("DOCKER_HOST", "unix:///var/run/docker.sock")
 	viper.SetDefault("DOCKER_API_VERSION", DockerAPIMinVersion)
 	viper.SetDefault("WATCHTOWER_POLL_INTERVAL", 300)
